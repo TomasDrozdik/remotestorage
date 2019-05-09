@@ -2,6 +2,7 @@
 .idea
 *.iml
 target
+storage_test
 
 # Compiled class file
 *.class
