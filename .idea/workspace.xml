@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29221b0-b5ba-4d13-b89a-a05b315f9c13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/requests/AdminRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/requests/AdminRequests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/requests/UserRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/requests/UserRequests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communication/src/main/protobuf/messages.proto" beforeDir="false" afterPath="$PROJECT_DIR$/communication/src/main/protobuf/messages.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/client/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/client/Client$ParallelStreamRedirect.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/client/Client$ParallelStreamRedirect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/client/Client$Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/client/Client$Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/requests/AdminRequests.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/requests/AdminRequests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/requests/HelpPrints.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/requests/HelpPrints.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/client_handler/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/client_handler/ClientHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/client_handler/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/client_handler/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/client_handler/responses/BaseUserResponses.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/client_handler/responses/BaseUserResponses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage_test/passwd" beforeDir="false" afterPath="$PROJECT_DIR$/storage_test/passwd" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,34 +38,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="-2499">
+              <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/requests/AdminRequests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+            <state relative-caret-position="176">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,9 +76,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/requests/HelpPrints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state relative-caret-position="61">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding>
+                <element signature="e#583#584#0" expanded="true" />
+                <element signature="e#603#604#0" expanded="true" />
                 <element signature="e#331#332#0" expanded="true" />
                 <element signature="e#358#359#0" expanded="true" />
                 <element signature="e#406#407#0" expanded="true" />
@@ -170,14 +152,14 @@
         <option value="$PROJECT_DIR$/client/src/main/java/processors/UserRequestProcessor.java" />
         <option value="$PROJECT_DIR$/communication/src/main/protobuf/messages.proto" />
         <option value="$PROJECT_DIR$/client/src/main/java/requests/ClientRequest.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/HelpPrints.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/client/HelpPrints.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/requests/UserRequests.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/requests/AdminRequests.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/requests/HelpPrints.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/client/Client.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java" />
       </list>
     </option>
   </component>
@@ -190,29 +172,13 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="communication" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="communication" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="communication" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="protoc-jar" type="36feed69:MavenProjectsStructure$PluginNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="900" />
-    <option name="width" value="1862" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -235,41 +201,6 @@
             <path>
               <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
               <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -277,51 +208,6 @@
               <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client_handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remotestorage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remotestorage" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client_handler" type="462c0819:PsiDirectoryNode" />
-              <item name="responses" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,18 +253,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="client" />
       <option name="PROGRAM_PARAMETERS" value="127.0.0.1 8888" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmptyMain" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EmptyMain" />
-      <module name="remotestorage" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -401,7 +280,6 @@
     </configuration>
     <list>
       <item itemvalue="Application.ServerMain" />
-      <item itemvalue="Application.EmptyMain" />
       <item itemvalue="Application.ClientMain" />
     </list>
   </component>
@@ -416,6 +294,14 @@
       <option name="presentableId" value="Default" />
       <updated>1557391120816</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed the ClientRequest to arbitrary number of string arguments to provide more flexibility.">
+      <created>1557424958010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557424958010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -429,7 +315,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="927" width="1862" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -439,13 +324,13 @@
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19328193" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3297062" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32969433" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5005507" side_tool="true" weight="0.36899564" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.3297062" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32969433" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32969433" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49944934" visible="true" weight="0.40393013" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49944934" visible="true" weight="0.40393013" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39934713" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -453,7 +338,7 @@
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21255507" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.21255507" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -488,6 +373,14 @@
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
     </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Changed the ClientRequest to arbitrary number of string arguments to provide more flexibility." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the ClientRequest to arbitrary number of string arguments to provide more flexibility." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -765,29 +658,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/requests/AdminRequests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="176">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/requests/HelpPrints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,30 +683,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="464">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/requests/HelpPrints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/server/client_handler/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+        <state relative-caret-position="525">
+          <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/server/client_handler/responses/BaseUserResponses.java">
+    <entry file="file://$PROJECT_DIR$/file">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        <state relative-caret-position="-2499">
+          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
