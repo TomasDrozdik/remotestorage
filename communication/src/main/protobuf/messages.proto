@@ -5,19 +5,18 @@ option java_outer_classname = "MessagesProtos";
 
 message ClientRequest {
     MessageType type = 1;
-    string arg1 = 2;
-    string arg2 = 3;
-    string arg3 = 4;
+    repeated string args = 2;
 
     enum MessageType {
         AUTH = 0;
         LS = 1;
         UP = 2;
         DOWN = 3;
-        ADD_USER = 4;
-        REMOVE_USER = 5;
-        CHECK_USER_PROPERTY = 6;
-        CHANGE_USER_PROPERTY = 7;
+        RM = 4;
+        ADD_USER = 5;
+        REMOVE_USER = 6;
+        CHECK_USER_PROPERTY = 7;
+        CHANGE_USER_PROPERTY = 8;
     }
 }
 
@@ -38,8 +37,8 @@ message ServerResponse {
 }
 
 message FileTransfer {
-    bytes data = 1;
-    Type type = 2;
+    Type type = 1;
+    bytes data = 2;
 
     enum Type {
         CONTINUE = 0;

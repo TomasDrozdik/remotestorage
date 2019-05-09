@@ -13,7 +13,7 @@ import user_manager.users.User;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Arrays;
+import java.util.Collections;
 
 public class ClientHandler extends Thread {
 	private Socket sock;
@@ -32,7 +32,8 @@ public class ClientHandler extends Thread {
 		try {
 			this.protoComm = new ProtoCommunication(sock.getInputStream(), sock.getOutputStream());
 
-			while ((u = authenticate()) == null) { /* empty */ }
+			while ((u = authenticate()) == null) {
+			}
 
 			if (u instanceof BaseUser) {
 				//TODO log
@@ -56,16 +57,16 @@ public class ClientHandler extends Thread {
 		if (!(clientRequest.getType() == MessagesProtos.ClientRequest.MessageType.AUTH))
 			return null;
 
-		User user =  userManager.authenticate(clientRequest.getArg1(), clientRequest.getArg2());
+		User user = userManager.authenticate(clientRequest.getArgs(0), clientRequest.getArgs(1));
 
 		if (user != null) {
 			if (user instanceof BaseUser)
-				protoComm.send(ResponseBuilder.buildPositiveResponse(Arrays.asList("user")));
+				protoComm.send(ResponseBuilder.buildPositiveResponse(Collections.singletonList("user")));
 			else
-				protoComm.send(ResponseBuilder.buildPositiveResponse(Arrays.asList("admin")));
+				protoComm.send(ResponseBuilder.buildPositiveResponse(Collections.singletonList("admin")));
 		} else {
 			//TODO log
-			System.err.printf("Client failed to authenticate with username %s.\n", clientRequest.getArg1());
+			System.err.printf("Client failed to authenticate with username %s.\n", clientRequest.getArgs(0));
 			protoComm.send(ResponseBuilder.buildNegativeResponse(MessagesProtos.ServerResponse.ErrorType.AUTH_FAIL));
 		}
 		return user;
@@ -80,10 +81,10 @@ public class ClientHandler extends Thread {
 						protoComm.send(BaseUserResponses.ls(u));
 						break;
 					case UP:
-						protoComm.send(BaseUserResponses.up(u, protoComm, clientRequest.getArg1()));
+						protoComm.send(BaseUserResponses.up(u, protoComm, clientRequest.getArgs(0)));
 						break;
 					case DOWN:
-						protoComm.send(BaseUserResponses.down(u, protoComm, clientRequest.getArg1()));
+						protoComm.send(BaseUserResponses.down(u, protoComm, clientRequest.getArgs(0)));
 						break;
 					default:
 						protoComm.send(ResponseBuilder.invalidRequest());
@@ -100,17 +101,11 @@ public class ClientHandler extends Thread {
 				MessagesProtos.ClientRequest clientRequest = protoComm.recvClientRequest();
 				switch (clientRequest.getType()) {
 					case ADD_USER:
-						protoComm.send(AdminResponses.addUser(u, clientRequest.getArg1(), clientRequest.getArg2(),
-								clientRequest.getArg3().equals("admin")));
+						protoComm.send(AdminResponses.addUser(u, clientRequest.getArgs(0), clientRequest.getArgs(1),
+								clientRequest.getArgs(2).equals("admin")));
 						break;
 					case REMOVE_USER:
-						protoComm.send(ResponseBuilder.buildNegativeResponse(
-								MessagesProtos.ServerResponse.ErrorType.OPERATION_NOT_YET_IMPLEMENTED));
-						break;
 					case CHECK_USER_PROPERTY:
-						protoComm.send(ResponseBuilder.buildNegativeResponse(
-								MessagesProtos.ServerResponse.ErrorType.OPERATION_NOT_YET_IMPLEMENTED));
-						break;
 					case CHANGE_USER_PROPERTY:
 						protoComm.send(ResponseBuilder.buildNegativeResponse(
 								MessagesProtos.ServerResponse.ErrorType.OPERATION_NOT_YET_IMPLEMENTED));

@@ -3,9 +3,10 @@ package client;
 import com.google.protobuf.InvalidProtocolBufferException;
 import communication.ProtoCommunication;
 import processors.UserRequestProcessor;
-import requests.AdminRequests;
-import requests.UserRequests;
 import remotestorage.proto.MessagesProtos;
+import requests.AdminRequests;
+import requests.HelpPrints;
+import requests.UserRequests;
 
 import java.io.*;
 import java.net.Socket;
@@ -32,7 +33,9 @@ public class Client implements Runnable {
 		Request req;
 		try {
 			this.protoComm = new ProtoCommunication(socket.getInputStream(), socket.getOutputStream());
-			while (!authenticate());
+
+			while (!authenticate()) {
+			}
 
 			out.print('>');
 			while ((line = in.readLine()) != null) {
@@ -48,7 +51,7 @@ public class Client implements Runnable {
 			out.println("Exiting...");
 		} catch (InvalidProtocolBufferException e) {
 			out.println("Connection closed by server.\nExiting...");
-		} catch (IOException | InterruptedException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -82,7 +85,7 @@ public class Client implements Runnable {
 		return serverResponse.getAck();
 	}
 
-	private Request parseRequest(String line) throws ExitException, IOException, InterruptedException {
+	private Request parseRequest(String line) throws ExitException {
 		String[] tokens = line.split(" +");
 		if (tokens.length < 1 || line.length() == 0)
 			return null;
@@ -98,28 +101,20 @@ public class Client implements Runnable {
 			case "down":
 				return new Request(UserRequests.down(tokens, err), tokens);
 			case "who":
+			case "addproperty":
+			case "listproperty":
+			case "listusers":
+			case "removeuser":
 				err.println("Yet unimplemented command: " + tokens[0]);
 				break;
 			case "adduser":
 				return new Request(AdminRequests.addUser(tokens, err), tokens);
-			case "removeuser":
-				err.println("Yet unimplemented command: " + tokens[0]);
-				break;
-			case "listusers":
-				err.println("Yet unimplemented command: " + tokens[0]);
-				break;
-			case "listproperty":
-				err.println("Yet unimplemented command: " + tokens[0]);
-				break;
-			case "addproperty":
-				err.println("Yet unimplemented command: " + tokens[0]);
-				break;
 			case "help":
 			case "?":
 				if (isAdmin) {
-					AdminRequests.printHelp(err);
+					HelpPrints.printAdminHelp(err);
 				} else {
-					UserRequests.printHelp(err);
+					HelpPrints.printBaseUserHelp(err);
 				}
 				break;
 			case "exit":
@@ -198,12 +193,18 @@ public class Client implements Runnable {
 		return true;
 	}
 
+	/**
+	 * Execute a given command in separate process using Runtime.exec() function.
+	 *
+	 * @param command command to execute
+	 * @return exit value of given process
+	 */
 	private int executeShellCmd(String command) {
 		try {
 			var proc = Runtime.getRuntime().exec(command);
 			/* Redirect the output and error stream. */
-			var t1 = new StreamRedirect(proc.getInputStream(), out);
-			var t2 = new StreamRedirect(proc.getErrorStream(), err);
+			var t1 = new ParallelStreamRedirect(proc.getInputStream(), out);
+			var t2 = new ParallelStreamRedirect(proc.getErrorStream(), err);
 			t1.start();
 			t2.start();
 			int exitval =  proc.waitFor();
@@ -216,11 +217,14 @@ public class Client implements Runnable {
 		}
 	}
 
-	class StreamRedirect extends Thread {
+	/**
+	 * Redirects given input stream to given output stream in parallel thread.
+	 */
+	class ParallelStreamRedirect extends Thread {
 		InputStream in;
 		PrintStream out;
 
-		StreamRedirect(InputStream in, PrintStream out) {
+		ParallelStreamRedirect(InputStream in, PrintStream out) {
 			this.in = in;
 			this.out = out;
 		}
@@ -228,8 +232,8 @@ public class Client implements Runnable {
 		public void run() {
 			try {
 				BufferedReader br = new BufferedReader(new InputStreamReader(in));
-				String line=null;
-				while ( (line = br.readLine()) != null)
+				String line;
+				while ((line = br.readLine()) != null)
 					out.println(line);
 			} catch (IOException ioe) {
 				ioe.printStackTrace();
@@ -237,6 +241,10 @@ public class Client implements Runnable {
 		}
 	}
 
+	/**
+	 * Pair like class combining ClientRequest and the tokens it was parsed from due to some information loss in
+	 * process of creating ClientRequest.
+	 */
 	private class Request {
 		MessagesProtos.ClientRequest clientRequest;
 		String[] tokens;

@@ -79,6 +79,12 @@ public class BaseUserResponses {
 		}
 	}
 
+	/**
+	 * Ends the file transfer stream by sending Error type FileTransfer message.
+	 *
+	 * @param protoComm Communication to send Error FileTransfer message to.
+	 * @throws IOException In case the protoComm throws on send.
+	 */
 	private static void endFileTransfer(ProtoCommunication protoComm) throws IOException {
 		protoComm.send(buildErrorFileTransferResponse());
 	}
