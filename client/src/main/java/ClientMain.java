@@ -11,8 +11,10 @@ public class ClientMain {
 	}
 
 	public static void main(String[] args) {
-		if (args.length != 2)
+		if (args.length != 2) {
 			usage();
+			return;
+		}
 
 		Socket socket;
 		try {
