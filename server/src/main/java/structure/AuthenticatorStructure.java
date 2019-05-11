@@ -2,7 +2,7 @@ package structure;
 
 import structure.files.PasswdRecord;
 
-public interface IAuthenticatorStructure {
+public interface AuthenticatorStructure {
 	/**
 	 * Get hashed passwd for given user.
 	 *

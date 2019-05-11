@@ -4,7 +4,7 @@ import structure.files.HomeDir;
 import structure.files.UserProperty;
 import user_manager.users.BaseUser;
 
-public interface IUserStructure {
+public interface UserStructure {
 	/**
 	 * Get users home folder.
 	 *

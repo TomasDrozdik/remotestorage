@@ -1,6 +1,6 @@
 package structure;
 
-public interface IAdminStructure {
+public interface AdminStructure {
 	/**
 	 * Add user to the structure.
 	 *
