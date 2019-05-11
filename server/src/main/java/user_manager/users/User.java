@@ -1,9 +1,9 @@
 package user_manager.users;
 
 public class User {
-	protected String username;
+    protected String username;
 
-	public String getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return username;
+    }
 }

@@ -6,18 +6,18 @@ import structure.files.HomeDir;
 import structure.files.UserProperty;
 
 public class BaseUser extends User {
-	private UserStructure storage;
+    private UserStructure storage;
 
-	public BaseUser(String username) {
-		this.username = username;
-		this.storage = Structure.getStructure();
-	}
+    public BaseUser(String username) {
+        this.username = username;
+        this.storage = Structure.getStructure();
+    }
 
-	public HomeDir getHome() {
-		return storage.getHome(this);
-	}
+    public HomeDir getHome() {
+        return storage.getHome(this);
+    }
 
-	public UserProperty getProperty() {
-		return storage.getUserProperty(this);
-	}
+    public UserProperty getProperty() {
+        return storage.getUserProperty(this);
+    }
 }

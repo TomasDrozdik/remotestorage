@@ -4,14 +4,14 @@ import structure.AdminStructure;
 import structure.Structure;
 
 public class AdminUser extends User {
-	private AdminStructure storage;
+    private AdminStructure storage;
 
-	public AdminUser(String username) {
-		this.username = username;
-		this.storage = Structure.getStructure();
-	}
+    public AdminUser(String username) {
+        this.username = username;
+        this.storage = Structure.getStructure();
+    }
 
-	public AdminStructure getStorage() {
-		return storage;
-	}
+    public AdminStructure getStorage() {
+        return storage;
+    }
 }
