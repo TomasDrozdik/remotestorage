@@ -29,20 +29,17 @@ public class PropertyDir {
 	 */
 	public static PropertyDir createPropertyDir(Path p, PasswdFile passwdFile) throws StructureException {
 		Map<String, UserProperty> data = new HashMap<>();
-
-		if (!Files.isDirectory(p))
+		if (!Files.isDirectory(p)) {
 			throw new StructureException(StructureException.Type.NOT_DIRECTORY);
-
+		}
 		checkIntegrity(p, passwdFile);
-
-		try {
-			for (Path dirEntry : Files.newDirectoryStream(p)) {
+		try (var dirStream = Files.newDirectoryStream(p)) {
+			for (Path dirEntry : dirStream) {
 				data.put(dirEntry.getFileName().toString(), UserProperty.createUserProperty(dirEntry));
 			}
 		} catch (IOException e) {
 			throw new StructureException(StructureException.Type.IO_EXCEPTION);
 		}
-
 		return new PropertyDir(p, data);
 	}
 
@@ -54,11 +51,11 @@ public class PropertyDir {
 	 */
 	private static void checkIntegrity(Path p, PasswdFile passwdFile) throws StructureException {
 		Set<String> userSet = passwdFile.getUsers();
-
 		try {
 			for (Path dirEntry : Files.newDirectoryStream(p)) {
-				if (!userSet.contains(dirEntry.getFileName().toString()))
+				if (!userSet.contains(dirEntry.getFileName().toString())) {
 					throw new StructureException(StructureException.Type.INTEGRITY_ERROR);
+				}
 			}
 		} catch (IOException e) {
 			throw new StructureException(StructureException.Type.IO_EXCEPTION);

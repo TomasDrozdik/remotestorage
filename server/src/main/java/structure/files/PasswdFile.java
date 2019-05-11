@@ -21,7 +21,7 @@ import java.util.Set;
  * [user_name]:[hashed_password]
  */
 public class PasswdFile {
-	Map<String, PasswdRecord> data;
+	private Map<String, PasswdRecord> data;
 	private Path path;
 
 	private PasswdFile(Path p, Map<String, PasswdRecord> data) {
@@ -37,16 +37,14 @@ public class PasswdFile {
 	 * @throws StructureException to signal that something went wrong check exception type for further info.
 	 */
 	public static PasswdFile createPasswdFile(Path p) throws StructureException {
-		String line;
-		String[] tokens;
 		Map<String, PasswdRecord> data = new HashMap<>();
-
-		if (Files.isDirectory(p))
+		if (Files.isDirectory(p)) {
 			throw new StructureException(StructureException.Type.INTEGRITY_ERROR);
-
+		}
 		try (BufferedReader br = new BufferedReader(new FileReader(p.toFile()))) {
+			String line;
 			while ((line = br.readLine()) != null) {
-				tokens = line.split(":");
+				String[] tokens = line.split(":");
 				if (tokens.length != 4)
 					throw new StructureException(StructureException.Type.INTEGRITY_ERROR);
 				data.put(tokens[0], new PasswdRecord(tokens[1], tokens[2].equals("admin"),
@@ -59,7 +57,6 @@ public class PasswdFile {
 		} catch (IOException e) {
 			throw new StructureException(StructureException.Type.IO_EXCEPTION);
 		}
-
 		return new PasswdFile(p, data);
 	}
 
@@ -71,11 +68,9 @@ public class PasswdFile {
 	 * @throws StructureException to signal that something went wrong check exception type for further info.
 	 */
 	public Structure.ReturnValue addUser(String username, String passwd, boolean isAdmin, long salt) throws StructureException {
-
 		if (data.containsKey(username)) {
 			return Structure.ReturnValue.ALREADY_EXISTS;
 		}
-
 		try {
 			Files.write(path, (username + ":" + passwd + ":" +
 					(isAdmin ? "admin" : "user") + ":" + salt + "\n").getBytes(), StandardOpenOption.APPEND);

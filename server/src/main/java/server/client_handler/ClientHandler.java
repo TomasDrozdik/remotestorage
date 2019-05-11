@@ -53,19 +53,20 @@ public class ClientHandler extends Thread {
 
 	private User authenticate() throws IOException {
 		MessagesProtos.ClientRequest clientRequest = protoComm.recvClientRequest();
-
-		if (!(clientRequest.getType() == MessagesProtos.ClientRequest.MessageType.AUTH))
+		if (clientRequest.getType() != MessagesProtos.ClientRequest.MessageType.AUTH) {
 			return null;
+		}
 
 		User user = userManager.authenticate(clientRequest.getArgs(0), clientRequest.getArgs(1));
 
 		if (user != null) {
-			if (user instanceof BaseUser)
+			if (user instanceof BaseUser) {
 				protoComm.send(ResponseBuilder.buildPositiveResponse(Collections.singletonList("user")));
-			else
-				protoComm.send(ResponseBuilder.buildPositiveResponse(Collections.singletonList("admin")));
+			} else {
+                protoComm.send(ResponseBuilder.buildPositiveResponse(Collections.singletonList("admin")));
+            }
 		} else {
-			//TODO log
+			// TODO: log
 			System.err.printf("Client failed to authenticate with username %s.\n", clientRequest.getArgs(0));
 			protoComm.send(ResponseBuilder.buildNegativeResponse(MessagesProtos.ServerResponse.ErrorType.AUTH_FAIL));
 		}

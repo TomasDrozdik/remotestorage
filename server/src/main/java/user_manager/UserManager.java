@@ -1,6 +1,6 @@
 package user_manager;
 
-import structure.IAuthenticatorStructure;
+import structure.AuthenticatorStructure;
 import structure.Structure;
 import structure.StructureException;
 import structure.files.PasswdRecord;
@@ -10,16 +10,16 @@ import user_manager.users.User;
 
 public class UserManager {
 	private static UserManager singleton;
-	private IAuthenticatorStructure storage;
+	private AuthenticatorStructure storage;
 
-	private UserManager(IAuthenticatorStructure s) {
+	private UserManager(AuthenticatorStructure s) {
 		this.storage = s;
 	}
 
 	public static UserManager getUserManager() {
-		if (UserManager.singleton == null)
+		if (UserManager.singleton == null) {
 			UserManager.singleton = new UserManager(Structure.getStructure());
-
+		}
 		return UserManager.singleton;
 	}
 
@@ -39,14 +39,15 @@ public class UserManager {
 	 */
 	public User authenticate(String username, String password) {
 		PasswdRecord pr = storage.getUserPasswd(username);
-		if (pr == null)
+		if (pr == null) {
 			return null;
-
+		}
 		if (pr.hashedPasswd.equals(Authenticator.hashPasswd(password, pr.salt))) {
-			if (storage.isAdmin(username))
+			if (storage.isAdmin(username)) {
 				return new AdminUser(username);
-			else
+			} else {
 				return new BaseUser(username);
+			}
 		}
 		return null;
 	}

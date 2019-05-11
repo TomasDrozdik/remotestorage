@@ -21,8 +21,9 @@ public class UserRequestProcessor {
 			protoComm.uploadFile(fileIs);
 		} catch (IOException ex) {
 			var path = Paths.get(fileName);
-			if (Files.exists(path))
+			if (Files.exists(path)) {
 				Files.delete(path);
+			}
 		}
 	}
 
@@ -37,8 +38,9 @@ public class UserRequestProcessor {
 			protoComm.downloadFile(fileOs);
 		} catch (IOException ex) {
 			var path = Paths.get(fileName);
-			if (Files.exists(path))
+			if (Files.exists(path)) {
 				Files.delete(path);
+			}
 		}
 	}
 }

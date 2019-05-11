@@ -1,12 +1,12 @@
 package user_manager.users;
 
-import structure.IUserStructure;
+import structure.UserStructure;
 import structure.Structure;
 import structure.files.HomeDir;
 import structure.files.UserProperty;
 
 public class BaseUser extends User {
-	private IUserStructure storage;
+	private UserStructure storage;
 
 	public BaseUser(String username) {
 		this.username = username;

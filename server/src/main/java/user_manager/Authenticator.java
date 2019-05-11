@@ -17,7 +17,7 @@ public class Authenticator {
 	public static String hashPasswd(String password, long salt) {
 		return password;
 
-		//TODO
+		// TODO:
 		//	try {
 		//		KeySpec spec = new PBEKeySpec(password.toCharArray(), ByteBuffer.allocate(Long.BYTES).putLong(salt).array(),
 		//				65536, 128);

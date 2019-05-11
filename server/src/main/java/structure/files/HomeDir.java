@@ -32,14 +32,12 @@ public class HomeDir {
 	 */
 	public static HomeDir createHomeDir(Path p, UserProperty userProperty) throws StructureException {
 		List<UploadedFile> files = new ArrayList<>();
-
-		if (!Files.isDirectory(p))
+		if (!Files.isDirectory(p)) {
 			throw new StructureException(StructureException.Type.NOT_DIRECTORY);
-
+		}
 		checkIntegrity(p, userProperty);
-
-		try {
-			for (Path dirEnt : Files.newDirectoryStream(p)) {
+		try (var dirStream = Files.newDirectoryStream(p)) {
+			for (Path dirEnt : dirStream) {
 				files.add(new UploadedFile(dirEnt));
 			}
 		} catch (SecurityException e) {
@@ -47,7 +45,6 @@ public class HomeDir {
 		} catch (IOException e) {
 			throw new StructureException(StructureException.Type.IO_EXCEPTION);
 		}
-
 		return new HomeDir(p, files);
 	}
 
